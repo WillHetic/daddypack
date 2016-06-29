@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
@@ -20,14 +21,18 @@ class RegistrationType extends AbstractType
         $builder
             ->add('address')
             ->add('date_of_birth', DateTimeType::class, array('label' => 'Date de naissance','attr' => array('class' => 'form-group')))
+            ->add('email', EmailType::class)
+            ->add('firstname')
+            ->add('lastname')
+            ->add('address')
+            ->add('date_of_birth')
             ->add('sex', ChoiceType::class, array(
                 'choices'  => array(
                     'Male' => null,
                     'Female' => null,
                 ),
                 'label' => 'Sexe',
-            ))
-;
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)
