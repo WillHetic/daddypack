@@ -31,20 +31,12 @@ class User extends BaseUser
     private $address;
 
     /**
-<<<<<<< HEAD
      * @ORM\Column(type="string", nullable=true)
-=======
-     * @ORM\Column(type="string")
->>>>>>> f7d1c84daecaba449965a7ecfa1b159699a9a1be
      */
     private $lastname;
 
     /**
-<<<<<<< HEAD
      * @ORM\Column(type="string", nullable=true)
-=======
-     * @ORM\Column(type="string")
->>>>>>> f7d1c84daecaba449965a7ecfa1b159699a9a1be
      */
     private $firstname;
 
@@ -54,11 +46,7 @@ class User extends BaseUser
     private $date_of_birth;
 
     /**
-<<<<<<< HEAD
      * @ORM\Column(type="smallint", nullable=true)
-=======
-     * @ORM\Column(type="smallint")
->>>>>>> f7d1c84daecaba449965a7ecfa1b159699a9a1be
      */
     private $sex;
 
