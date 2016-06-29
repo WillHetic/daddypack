@@ -5,8 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
@@ -21,13 +21,18 @@ class RegistrationType extends AbstractType
             ->add('lastname')
             ->add('address')
             ->add('date_of_birth')
-            ->add('sex');
+            ->add('sex', ChoiceType::class, array(
+                'choices'  => array(
+                    'Male' => null,
+                    'Female' => null,
+                )))
+;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => $this->class,
+            'data_class' => 'AppBundle\Entity\User',
             'csrf_token_id' => 'registration',
         ));
     }
