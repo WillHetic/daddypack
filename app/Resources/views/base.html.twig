@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="initial-scale=1.0,width=device-width">
+        <link rel="stylesheet" href="{{ asset('styles/style.min.css') }}"/>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic' rel='stylesheet' type='text/css'>
     </head>
     <body>
         {% block body %}{% endblock %}
